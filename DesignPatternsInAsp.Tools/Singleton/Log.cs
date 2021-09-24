@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace DesignPatternsInAsp.Tools
+namespace DesignPatternsInAsp.Tools.Singleton
 {
     /// <summary>
     /// Clase: Log que aplica el patrón Singleton y que escribe en un fichero de texto.
@@ -21,7 +21,7 @@ namespace DesignPatternsInAsp.Tools
         public static Log GetInstance(string path)
         {
             //Sólo un hilo a la vez, otros estarían en espera
-            lock(_protectLog)
+            lock (_protectLog)
             {
                 if (_instance == null)
                 {
@@ -32,7 +32,7 @@ namespace DesignPatternsInAsp.Tools
             return _instance;
         }
 
-        private Log(string path) 
+        private Log(string path)
         {
             _path = path;
         }

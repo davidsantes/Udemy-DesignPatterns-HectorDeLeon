@@ -1,28 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="DesignPatterns.Creacionales.Factory.SaleFactory">
-    <Position X="4.75" Y="0.5" Width="1.5" />
+    <Position X="5.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Creacionales\Factory\FactoryDefinition.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DesignPatterns.Creacionales.Factory.StoreSaleFactory">
-    <Position X="3" Y="1.75" Width="2" />
+    <Position X="6.5" Y="3" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAIABAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Creacionales\Factory\FactoryDefinition.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DesignPatterns.Creacionales.Factory.InternetSaleFactory">
-    <Position X="5.75" Y="1.75" Width="2" />
+    <Position X="4.25" Y="3" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAgAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Creacionales\Factory\FactoryDefinition.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DesignPatterns.Creacionales.Factory.StoreSale" BaseTypeListCollapsed="true">
-    <Position X="7.75" Y="0.5" Width="1.5" />
+    <Position X="0.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
       <FileName>Creacionales\Factory\FactoryDefinition.cs</FileName>
@@ -30,7 +30,7 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="DesignPatterns.Creacionales.Factory.InternetSale" BaseTypeListCollapsed="true">
-    <Position X="9.5" Y="0.5" Width="1.5" />
+    <Position X="2.25" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAQAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Creacionales\Factory\FactoryDefinition.cs</FileName>
@@ -38,7 +38,7 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Interface Name="DesignPatterns.Creacionales.Factory.ISale">
-    <Position X="9.5" Y="2.5" Width="1.5" />
+    <Position X="1.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Creacionales\Factory\FactoryDefinition.cs</FileName>

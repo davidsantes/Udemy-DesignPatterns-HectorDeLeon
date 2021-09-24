@@ -1,6 +1,6 @@
 ﻿using DesignPatternsInAsp.Configuration;
 using DesignPatternsInAsp.Models;
-using DesignPatternsInAsp.Tools;
+using DesignPatternsInAsp.Tools.Singleton;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;

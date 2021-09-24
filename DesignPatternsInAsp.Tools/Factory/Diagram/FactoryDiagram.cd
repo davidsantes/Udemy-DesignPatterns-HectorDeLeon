@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DesignPatternsInAsp.Tools.Factory.EarnFactory">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Factory\EarnFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignPatternsInAsp.Tools.Factory.ForeignEarn">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAABAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Factory\ForeignEarn.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DesignPatternsInAsp.Tools.Factory.ForeignEarnFactory">
+    <Position X="6.5" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAQAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Factory\ForeignEarnFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignPatternsInAsp.Tools.Factory.LocalEarn">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Factory\LocalEarn.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DesignPatternsInAsp.Tools.Factory.LocalEarnFactory">
+    <Position X="4.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Factory\LocalEarnFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="DesignPatternsInAsp.Tools.Factory.IEarn">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Factory\IEarn.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

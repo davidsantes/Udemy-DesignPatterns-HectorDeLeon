@@ -1,5 +1,6 @@
 ﻿using DesignPatterns.Creacionales.Factory;
 using DesignPatterns.Creacionales.Singleton;
+using DesignPatterns.Otros.DependencyInjection;
 using System;
 
 namespace DesignPatterns
@@ -46,6 +47,22 @@ namespace DesignPatterns
             #endregion Factory
 
             Console.WriteLine("******************* FIN PATRONES CREACIONALES *******************");
+
+            Console.WriteLine("******************* INICIO PATRONES OTROS *******************" + Environment.NewLine);
+
+            #region DependencyInjection
+
+            Console.WriteLine("01. INICIO PATRÓN FACTORY");
+
+            var beer = new Beer("Amstel", "Amstel brand");
+            var drinkWithBeer = new DrinkWithBeerDi(10, 1, beer);
+            drinkWithBeer.Build();
+
+            Console.WriteLine("03. FIN PATRÓN FACTORY" + Environment.NewLine);
+
+            #endregion DependencyInjection
+
+            Console.WriteLine("******************* FIN PATRONES OTROS *******************");
         }
     }
 }
