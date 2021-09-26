@@ -1,4 +1,5 @@
 using DesignPatternsInAsp.Configuration;
+using DesignPatternsInAsp.Tools.Factory;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,6 +29,17 @@ namespace DesignPatternsInAsp
             
             //Inyección de las configuraciones de appsettings.json
             services.Configure<MyCustomConfig>(Configuration.GetSection("MyCustomConfig"));
+
+            //Inyección de dependencias, inyectamos en el contenedor las factorías
+            services.AddTransient((factory)=> { 
+                return new LocalEarnFactory(Configuration.GetSection("MyCustomConfig").GetValue<decimal>("LocalPercentage"));
+            });
+            services.AddTransient((factory) => {
+                return new ForeignEarnFactory(Configuration
+                    .GetSection("MyCustomConfig").GetValue<decimal>("ForeignPercentage"),
+                    Configuration
+                    .GetSection("MyCustomConfig").GetValue<decimal>("Extra"));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
