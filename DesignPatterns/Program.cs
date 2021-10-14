@@ -3,6 +3,7 @@ using DesignPatterns.Creacionales.Singleton;
 using DesignPatterns.Otros.DependencyInjection;
 using DesignPatterns.Estructurales.Repository.Models;
 using System;
+using DesignPatterns.Estructurales.Repository;
 
 namespace DesignPatterns
 {
@@ -56,11 +57,23 @@ namespace DesignPatterns
             Console.WriteLine("03. INICIO PATRÓN REPOSITORY");
 
             using (var context = new InventoryDbContext()) {
-                var categoryList = context.Categories;
+                var categoryRepository = new CategoryRepository(context);
+
+                var newCategory = new Category
+                {
+                    CategoryId = "testId",
+                    CategoryName = "testName"
+                };
+                categoryRepository.Add(newCategory);
+                categoryRepository.Save();
+
+                var categoryList = categoryRepository.Get();
                 foreach (var category in categoryList)
                 {
                     Console.WriteLine(category.CategoryName);
                 }
+                categoryRepository.Delete("testId");
+                categoryRepository.Save();
             }
 
             Console.WriteLine("03. FIN PATRÓN REPOSITORY" + Environment.NewLine);
