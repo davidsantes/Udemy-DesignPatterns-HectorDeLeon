@@ -1,0 +1,5 @@
+Para ejecutar el scaffolding en el proyecto (Database first):
+01.- Debe existir la base de datos InventoryDb en SQL. Mirar en SQL\Database script.sql
+02.- Poner el proyecto como inicial
+03.- Dentro del Package Manager Console, ejecutar la línea de comandos que creará todo el sistema en la carpet de salida "Estructurales\Repository\Models":
+Scaffold-DbContext "Server=.\SQLEXPRESS;Database=InventoryDb;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Estructurales\Repository\Models

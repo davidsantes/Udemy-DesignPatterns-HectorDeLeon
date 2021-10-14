@@ -1,6 +1,7 @@
 ﻿using DesignPatterns.Creacionales.Factory;
 using DesignPatterns.Creacionales.Singleton;
 using DesignPatterns.Otros.DependencyInjection;
+using DesignPatterns.Estructurales.Repository.Models;
 using System;
 
 namespace DesignPatterns
@@ -48,17 +49,37 @@ namespace DesignPatterns
 
             Console.WriteLine("******************* FIN PATRONES CREACIONALES *******************");
 
+            Console.WriteLine("******************* INICIO PATRONES ESTRUCTURALES *******************" + Environment.NewLine);
+
+            #region Repository
+
+            Console.WriteLine("03. INICIO PATRÓN REPOSITORY");
+
+            using (var context = new InventoryDbContext()) {
+                var categoryList = context.Categories;
+                foreach (var category in categoryList)
+                {
+                    Console.WriteLine(category.CategoryName);
+                }
+            }
+
+            Console.WriteLine("03. FIN PATRÓN REPOSITORY" + Environment.NewLine);
+
+            #endregion Repository
+
+            Console.WriteLine("******************* FIN PATRONES ESTRUCTURALES *******************" + Environment.NewLine);
+
             Console.WriteLine("******************* INICIO PATRONES OTROS *******************" + Environment.NewLine);
 
             #region DependencyInjection
 
-            Console.WriteLine("01. INICIO PATRÓN FACTORY");
+            Console.WriteLine("04. INICIO PATRÓN FACTORY");
 
             var beer = new Beer("Amstel", "Amstel brand");
             var drinkWithBeer = new DrinkWithBeerDi(10, 1, beer);
             drinkWithBeer.Build();
 
-            Console.WriteLine("03. FIN PATRÓN FACTORY" + Environment.NewLine);
+            Console.WriteLine("04. FIN PATRÓN FACTORY" + Environment.NewLine);
 
             #endregion DependencyInjection
 
