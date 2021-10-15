@@ -1,8 +1,11 @@
 using DesignPatternsInAsp.Configuration;
+using DesignPatternsInAsp.Models.Data;
+using DesignPatternsInAsp.Repository;
 using DesignPatternsInAsp.Tools.Factory;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -40,6 +43,13 @@ namespace DesignPatternsInAsp
                     Configuration
                     .GetSection("MyCustomConfig").GetValue<decimal>("Extra"));
             });
+            services.AddDbContext<InventoryDbContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("Connection"));
+            });
+
+            //A diferencia de Singleton, en este caso devuelve un objeto por cada solicitud
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
