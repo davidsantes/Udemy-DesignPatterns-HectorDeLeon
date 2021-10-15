@@ -57,7 +57,7 @@ namespace DesignPatterns
             Console.WriteLine("03. INICIO PATRÓN REPOSITORY");
 
             using (var context = new InventoryDbContext()) {
-                var categoryRepository = new CategoryRepository(context);
+                var categoryRepository = new Repository<Category>(context);
 
                 var newCategory = new Category
                 {
@@ -69,8 +69,8 @@ namespace DesignPatterns
 
                 var categoryList = categoryRepository.Get();
                 foreach (var category in categoryList)
-                {
-                    Console.WriteLine(category.CategoryName);
+                {                    
+                    Console.WriteLine($"{category.CategoryId}{"-"}{category.CategoryName}");
                 }
                 categoryRepository.Delete("testId");
                 categoryRepository.Save();
