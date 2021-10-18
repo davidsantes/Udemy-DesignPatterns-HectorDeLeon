@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -9,6 +9,7 @@
     <Folder Include="Comportamiento\" />
     <Folder Include="EsquemaClasico\" />
     <Folder Include="Estructurales\" />
+    <Folder Include="Otros\UnitOfWork\Diagram\" />
   </ItemGroup>
 
   <ItemGroup>

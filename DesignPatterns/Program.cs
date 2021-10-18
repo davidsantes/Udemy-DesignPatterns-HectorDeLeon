@@ -4,6 +4,7 @@ using DesignPatterns.Otros.DependencyInjection;
 using DesignPatterns.Otros.Repository.Models;
 using System;
 using DesignPatterns.Otros.Repository;
+using DesignPatterns.Otros.UnitOfWork;
 
 namespace DesignPatterns
 {
@@ -15,7 +16,7 @@ namespace DesignPatterns
 
             #region Singleton            
 
-            Console.WriteLine("01. INICIO PATRÓN SINGLETON");
+            Console.WriteLine(". INICIO PATRÓN SINGLETON");
 
             var singletonA = SingletonDefinition.Instance;
             var singletonB = SingletonDefinition.Instance;
@@ -27,13 +28,13 @@ namespace DesignPatterns
             var log = Log.Instance;
             log.Save("Esto es un mensaje para ver cómo funciona un log de tipo Singleton");
             
-            Console.WriteLine("01. FIN PATRÓN SINGLETON" + Environment.NewLine);            
+            Console.WriteLine(". FIN PATRÓN SINGLETON" + Environment.NewLine);            
 
             #endregion Singleton
 
             #region Factory
 
-            Console.WriteLine("02. INICIO PATRÓN FACTORY");
+            Console.WriteLine(". INICIO PATRÓN FACTORY");
 
             SaleFactory storeSaleFactory = new StoreSaleFactory(10);
             SaleFactory internetSaleFactory = new InternetSaleFactory(2);
@@ -44,7 +45,7 @@ namespace DesignPatterns
             ISale internetSale = internetSaleFactory.GetSale();
             internetSale.Sell(productPrice);
 
-            Console.WriteLine("02. FIN PATRÓN FACTORY" + Environment.NewLine);
+            Console.WriteLine(". FIN PATRÓN FACTORY" + Environment.NewLine);
 
             #endregion Factory
 
@@ -52,11 +53,28 @@ namespace DesignPatterns
 
             Console.WriteLine("******************* INICIO PATRONES ESTRUCTURALES *******************" + Environment.NewLine);
 
+            Console.WriteLine("******************* FIN PATRONES ESTRUCTURALES *******************" + Environment.NewLine);
+
+            Console.WriteLine("******************* INICIO PATRONES OTROS *******************" + Environment.NewLine);
+
+            #region DependencyInjection
+
+            Console.WriteLine(". INICIO PATRÓN FACTORY");
+
+            var beer = new Beer("Amstel", "Amstel brand");
+            var drinkWithBeer = new DrinkWithBeerDi(10, 1, beer);
+            drinkWithBeer.Build();
+
+            Console.WriteLine(". FIN PATRÓN FACTORY" + Environment.NewLine);
+
+            #endregion DependencyInjection
+
             #region Repository
 
-            Console.WriteLine("03. INICIO PATRÓN REPOSITORY");
+            Console.WriteLine(". INICIO PATRÓN REPOSITORY");
 
-            using (var context = new InventoryDbContext()) {
+            using (var context = new InventoryDbContext())
+            {
                 var categoryRepository = new Repository<Category>(context);
 
                 var newCategory = new Category
@@ -69,32 +87,50 @@ namespace DesignPatterns
 
                 var categoryList = categoryRepository.Get();
                 foreach (var category in categoryList)
-                {                    
+                {
                     Console.WriteLine($"{category.CategoryId}{"-"}{category.CategoryName}");
                 }
                 categoryRepository.Delete("testId");
                 categoryRepository.Save();
             }
 
-            Console.WriteLine("03. FIN PATRÓN REPOSITORY" + Environment.NewLine);
+            Console.WriteLine(". FIN PATRÓN REPOSITORY" + Environment.NewLine);
 
             #endregion Repository
 
-            Console.WriteLine("******************* FIN PATRONES ESTRUCTURALES *******************" + Environment.NewLine);
+            #region UnitOfWork
 
-            Console.WriteLine("******************* INICIO PATRONES OTROS *******************" + Environment.NewLine);
+            Console.WriteLine(". INICIO PATRÓN UnitOfWork");
 
-            #region DependencyInjection
+            using (var context = new InventoryDbContext())
+            {
+                var unitOfWork = new UnitOfWork(context);
+                
+                var categories = unitOfWork.Categories;
+                var newCategory = new Category
+                {
+                    CategoryId = "testIdCategory",
+                    CategoryName = "testNameCategory"
+                };
+                categories.Add(newCategory);
 
-            Console.WriteLine("04. INICIO PATRÓN FACTORY");
+                var products = unitOfWork.Products;
+                var newProduct = new Product
+                {
+                    ProductId = "TestId",
+                    ProductName = "TestName",
+                    ProductDescription = "TestDescription",
+                    CategoryId = "testIdCategory"
+                };
+                products.Add(newProduct);
 
-            var beer = new Beer("Amstel", "Amstel brand");
-            var drinkWithBeer = new DrinkWithBeerDi(10, 1, beer);
-            drinkWithBeer.Build();
+                //Realiza todas las operaciones en una sola solicitud, sin hacer varias conexiones a BDD
+                unitOfWork.Save();
+            }
 
-            Console.WriteLine("04. FIN PATRÓN FACTORY" + Environment.NewLine);
+            Console.WriteLine(". FIN PATRÓN UnitOfWork" + Environment.NewLine);
 
-            #endregion DependencyInjection
+            #endregion UnitOfWork
 
             Console.WriteLine("******************* FIN PATRONES OTROS *******************");
         }
