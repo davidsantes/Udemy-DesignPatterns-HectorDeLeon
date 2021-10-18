@@ -1,0 +1,34 @@
+﻿@using  DesignPatternsInAsp.Models.ViewModels
+@model FormProductViewModel
+
+<form asp-controller="Product" asp-action="Add" method="post">
+    <div class="form-group">
+        <label asp-for="ProductId"></label>
+        <input class="form-control" asp-for="ProductId" />
+        <span asp-validation-for="ProductId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ProductName"></label>
+        <input class="form-control" asp-for="ProductName" />
+        <span asp-validation-for="ProductName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ProductDescription"></label>
+        <input class="form-control" asp-for="ProductDescription" />
+        <span asp-validation-for="ProductDescription" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CategoryId"></label>
+        <select class="form-control" asp-for="CategoryId" asp-items="@ViewBag.Categories">
+            <option value="">...Selecciona marca....</option>
+        </select>
+        <span asp-validation-for="CategoryId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit">Guardar</button>
+    </div>
+</form>
