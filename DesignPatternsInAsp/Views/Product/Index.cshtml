@@ -1,0 +1,30 @@
+﻿@using  DesignPatternsInAsp.Models.ViewModels
+@model IEnumerable<ProductViewModel>
+
+<div class="row">
+    <div class="col-12">
+        <a class="btn btn-primary" href="~/Product/Add">Nuevo producto</a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <table class="table">
+            <tr>
+                <th>ProductId</th>
+                <th>ProductName</th>
+                <th>ProductDescription</th>
+                <th>CategoryId</th>                
+            </tr>
+            @foreach(var product in Model)
+            {
+            <tr>
+                <td>@product.ProductId</td>
+                <td>@product.ProductName</td>
+                <td>@product.ProductDescription</td>
+                <td>@product.CategoryId</td>            
+            </tr>
+            }
+        </table>
+    </div>
+</div>

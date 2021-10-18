@@ -1,11 +1,10 @@
 ﻿using DesignPatternsInAsp.Configuration;
-using DesignPatternsInAsp.Models;
 using DesignPatternsInAsp.Models.Data;
-using DesignPatternsInAsp.Repository;
+using DesignPatternsInAsp.Models.ViewModels;
+using DesignPatternsInAsp.Repository.Repository;
 using DesignPatternsInAsp.Tools.Singleton;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
-using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 

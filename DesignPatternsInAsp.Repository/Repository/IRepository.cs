@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DesignPatternsInAsp.Repository
+namespace DesignPatternsInAsp.Repository.Repository
 {
     /// <summary>
     /// Interface que permita trabajar el patrón repositorio con genéricos

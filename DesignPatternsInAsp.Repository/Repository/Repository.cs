@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DesignPatternsInAsp.Repository
+namespace DesignPatternsInAsp.Repository.Repository
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
