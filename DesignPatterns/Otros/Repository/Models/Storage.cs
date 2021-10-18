@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace DesignPatterns.Estructurales.Repository.Models
+namespace DesignPatterns.Otros.Repository.Models
 {
     public partial class Storage
     {

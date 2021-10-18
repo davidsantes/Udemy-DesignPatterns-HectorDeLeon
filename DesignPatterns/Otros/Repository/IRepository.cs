@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DesignPatterns.Estructurales.Repository
+namespace DesignPatterns.Otros.Repository
 {
     /// <summary>
     /// Interface que permita trabajar el patrón repositorio con genéricos

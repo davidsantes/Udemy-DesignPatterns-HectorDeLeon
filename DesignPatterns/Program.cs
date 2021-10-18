@@ -1,9 +1,9 @@
 ﻿using DesignPatterns.Creacionales.Factory;
 using DesignPatterns.Creacionales.Singleton;
 using DesignPatterns.Otros.DependencyInjection;
-using DesignPatterns.Estructurales.Repository.Models;
+using DesignPatterns.Otros.Repository.Models;
 using System;
-using DesignPatterns.Estructurales.Repository;
+using DesignPatterns.Otros.Repository;
 
 namespace DesignPatterns
 {

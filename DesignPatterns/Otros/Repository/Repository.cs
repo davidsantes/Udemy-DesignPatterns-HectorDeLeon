@@ -1,9 +1,9 @@
-﻿using DesignPatterns.Estructurales.Repository.Models;
+﻿using DesignPatterns.Otros.Repository.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DesignPatterns.Estructurales.Repository
+namespace DesignPatterns.Otros.Repository
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {

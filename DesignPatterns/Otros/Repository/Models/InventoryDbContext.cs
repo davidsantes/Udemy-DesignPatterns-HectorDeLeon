@@ -1,10 +1,8 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
 
 #nullable disable
 
-namespace DesignPatterns.Estructurales.Repository.Models
+namespace DesignPatterns.Otros.Repository.Models
 {
     public partial class InventoryDbContext : DbContext
     {
