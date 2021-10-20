@@ -1,6 +1,7 @@
 ﻿using DesignPatternsInAsp.Models.Data;
 using DesignPatternsInAsp.Models.ViewModels;
 using DesignPatternsInAsp.Repository.UnitOfWork;
+using DesignPatternsInAsp.Strategies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
@@ -35,8 +36,7 @@ namespace DesignPatternsInAsp.Controllers
         [HttpGet]
         public IActionResult Add()
         {
-            var categories = _unitOfWork.Categories.Get();
-            ViewBag.Categories = new SelectList(categories, "CategoryId", "CategoryName");
+            GetCategoriesData();
             return View();
         }
 
@@ -46,39 +46,30 @@ namespace DesignPatternsInAsp.Controllers
             //Si no es válido, regresa a la vista de get, pero con los datos rellenados
             if (!ModelState.IsValid)
             {
-                var categories = _unitOfWork.Categories.Get();
-                ViewBag.Categories = new SelectList(categories, "CategoryId", "CategoryName");
+                GetCategoriesData();
                 return View("Add", formProductVm);
             }
 
-            var newProduct = new Product
-            {
-                ProductId = formProductVm.ProductId,
-                ProductName = formProductVm.ProductName,
-                ProductDescription = formProductVm.ProductDescription,
-            };
-
-            //Si no existe la marca, se crea
-            if (string.IsNullOrEmpty(formProductVm.CategoryId))
-            {
-                var newCategory = new Category
-                {
-                    CategoryId = Guid.NewGuid().ToString(),
-                    CategoryName = $"{"Categoría - "}{formProductVm.ProductName}"
-                };
-
-                newProduct.CategoryId = newCategory.CategoryId;
-                _unitOfWork.Categories.Add(newCategory);
-            }
-            else
-            {
-                newProduct.CategoryId = formProductVm.CategoryId;
-            }
-
-            _unitOfWork.Products.Add(newProduct);
-            _unitOfWork.Save();
+            //Diferente estrategia si existe la marca o no:
+            var context = string.IsNullOrEmpty(formProductVm.CategoryId) ?
+                new ProductContext(new ProductWithoutCategoryStrategy()) :
+                new ProductContext(new ProductWithCategoryStrategy());
+            context.Add(formProductVm, _unitOfWork);
 
             return RedirectToAction("Index");
         }
+
+        #region HELPERS
+
+        /// <summary>
+        /// Retorna al ViewBag las categorías
+        /// </summary>
+        private void GetCategoriesData()
+        {
+            var categories = _unitOfWork.Categories.Get();
+            ViewBag.Categories = new SelectList(categories, "CategoryId", "CategoryName");
+        }
+
+        #endregion HELPERS
     }
 }
