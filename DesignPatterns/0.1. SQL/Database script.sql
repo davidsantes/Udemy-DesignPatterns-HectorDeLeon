@@ -64,7 +64,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Products](
-	[ProductId] [nvarchar](10) NOT NULL,
+	[ProductId] [nvarchar](50) NOT NULL,
 	[ProductName] [nvarchar](100) NOT NULL,
 	[ProductDescription] [nvarchar](600) NULL,
 	[TotalQuantity] [int] NOT NULL,

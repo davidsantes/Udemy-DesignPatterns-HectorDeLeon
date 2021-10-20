@@ -5,6 +5,7 @@ using DesignPatterns._1._0._Creacionales.Singleton;
 using DesignPatterns._4._0._Otros.DependencyInjection;
 using DesignPatterns._4._0._Otros.Repository.Models;
 using DesignPatterns._4._0._Otros.Repository;
+using DesignPatterns._3._0._Comportamiento.Strategy;
 
 namespace DesignPatterns
 {
@@ -52,6 +53,23 @@ namespace DesignPatterns
             Console.WriteLine("******************* FIN PATRONES CREACIONALES *******************");
 
             Console.WriteLine("******************* INICIO PATRONES ESTRUCTURALES *******************" + Environment.NewLine);
+
+            Console.WriteLine("******************* FIN PATRONES COMPORTAMIENTO *******************" + Environment.NewLine);
+
+            #region Strategy            
+
+            Console.WriteLine(". INICIO PATRÓN STRATEGY");
+
+            var strategyContext = new StrategyContext(new CarStrategy());
+            strategyContext.Run();
+            strategyContext.Strategy = new MotoStrategy();
+            strategyContext.Run();
+
+            Console.WriteLine(". FIN PATRÓN STRATEGY" + Environment.NewLine);
+
+            #endregion Strategy
+
+            Console.WriteLine("******************* INICIO PATRONES COMPORTAMIENTO *******************" + Environment.NewLine);
 
             Console.WriteLine("******************* FIN PATRONES ESTRUCTURALES *******************" + Environment.NewLine);
 
@@ -109,7 +127,7 @@ namespace DesignPatterns
                 var categories = unitOfWork.Categories;
                 var newCategory = new Category
                 {
-                    CategoryId = "testIdCategory",
+                    CategoryId = "testIdCategory" + Guid.NewGuid().ToString(),
                     CategoryName = "testNameCategory"
                 };
                 categories.Add(newCategory);
@@ -117,10 +135,10 @@ namespace DesignPatterns
                 var products = unitOfWork.Products;
                 var newProduct = new Product
                 {
-                    ProductId = "TestId",
+                    ProductId = "TestId" + Guid.NewGuid().ToString(),
                     ProductName = "TestName",
                     ProductDescription = "TestDescription",
-                    CategoryId = "testIdCategory"
+                    CategoryId = newCategory.CategoryId
                 };
                 products.Add(newProduct);
 

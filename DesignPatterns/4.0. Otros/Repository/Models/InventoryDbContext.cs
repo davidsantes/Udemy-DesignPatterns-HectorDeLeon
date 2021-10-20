@@ -60,7 +60,7 @@ namespace DesignPatterns._4._0._Otros.Repository.Models
             {
                 entity.HasIndex(e => e.CategoryId, "IX_Products_CategoryId");
 
-                entity.Property(e => e.ProductId).HasMaxLength(10);
+                entity.Property(e => e.ProductId).HasMaxLength(50);
 
                 entity.Property(e => e.CategoryId).HasMaxLength(50);
 

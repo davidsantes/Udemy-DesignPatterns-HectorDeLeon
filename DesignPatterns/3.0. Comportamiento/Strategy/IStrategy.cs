@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesignPatterns._4._0._Otros.Repository.Models
+namespace DesignPatterns._3._0._Comportamiento.Strategy
 {
-    class Class1
+    public interface IStrategy
     {
+        public void Run();
     }
 }
