@@ -1,10 +1,10 @@
-﻿using DesignPatterns.Creacionales.Factory;
-using DesignPatterns.Creacionales.Singleton;
-using DesignPatterns.Otros.DependencyInjection;
-using DesignPatterns.Otros.Repository.Models;
-using System;
-using DesignPatterns.Otros.Repository;
+﻿using System;
 using DesignPatterns.Otros.UnitOfWork;
+using DesignPatterns._1._0._Creacionales.Factory;
+using DesignPatterns._1._0._Creacionales.Singleton;
+using DesignPatterns._4._0._Otros.DependencyInjection;
+using DesignPatterns._4._0._Otros.Repository.Models;
+using DesignPatterns._4._0._Otros.Repository;
 
 namespace DesignPatterns
 {

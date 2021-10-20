@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace DesignPatterns.Otros.Repository.Models
+namespace DesignPatterns._4._0._Otros.Repository.Models
 {
     public partial class Product
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DesignPatterns.Creacionales.Factory
+namespace DesignPatterns._1._0._Creacionales.Factory
 {
     /// <summary>
     /// Creator

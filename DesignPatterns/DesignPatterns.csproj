@@ -6,10 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Comportamiento\" />
-    <Folder Include="EsquemaClasico\" />
-    <Folder Include="Estructurales\" />
-    <Folder Include="Otros\UnitOfWork\Diagram\" />
+    <Folder Include="3.0. Comportamiento\" />
+    <Folder Include="0.2. EsquemaClasico\" />
+    <Folder Include="2.0. Estructurales\" />
   </ItemGroup>
 
   <ItemGroup>

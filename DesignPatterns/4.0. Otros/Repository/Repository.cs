@@ -1,9 +1,9 @@
-﻿using DesignPatterns.Otros.Repository.Models;
+﻿using DesignPatterns._4._0._Otros.Repository.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DesignPatterns.Otros.Repository
+namespace DesignPatterns._4._0._Otros.Repository
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {

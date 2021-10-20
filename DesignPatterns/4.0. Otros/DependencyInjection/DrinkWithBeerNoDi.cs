@@ -1,19 +1,18 @@
 ﻿using System;
 
-namespace DesignPatterns.Otros.DependencyInjection
+namespace DesignPatterns._4._0._Otros.DependencyInjection
 {
-    public class DrinkWithBeerDi
+    public class DrinkWithBeerNoDi        
     {
         //No se está aplicando la inyección de dependencias, si cambia Beer, hay que cambiar esta clase
-        private readonly Beer _beer;
+        private readonly Beer _beer = new Beer("Amstel", "Amstel brand");
         private readonly decimal _water;
         private readonly decimal _sugar;
 
-        public DrinkWithBeerDi(decimal water, decimal sugar, Beer beer)
+        public DrinkWithBeerNoDi(decimal water, decimal sugar)
         {
             _water = water;
             _sugar = sugar;
-            _beer = beer;
         }
 
         public void Build()

@@ -1,8 +1,8 @@
-﻿namespace DesignPatterns.Otros.DependencyInjection
+﻿namespace DesignPatterns._4._0._Otros.DependencyInjection
 {
     public class Beer
     {
-        private string _name;
+        private readonly string _name;
         private readonly string _brand;
 
         public string Name {

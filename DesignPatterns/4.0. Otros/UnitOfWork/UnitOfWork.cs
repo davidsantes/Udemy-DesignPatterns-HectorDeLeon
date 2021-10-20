@@ -1,6 +1,5 @@
-﻿using DesignPatterns.Otros.Repository;
-using DesignPatterns.Otros.Repository.Models;
-using System;
+﻿using DesignPatterns._4._0._Otros.Repository;
+using DesignPatterns._4._0._Otros.Repository.Models;
 
 namespace DesignPatterns.Otros.UnitOfWork
 {

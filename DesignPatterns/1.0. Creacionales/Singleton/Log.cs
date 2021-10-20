@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace DesignPatterns.Creacionales.Singleton
+namespace DesignPatterns._1._0._Creacionales.Singleton
 {
     public class Log
     {

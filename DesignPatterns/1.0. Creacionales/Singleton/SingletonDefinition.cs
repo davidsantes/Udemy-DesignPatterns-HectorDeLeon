@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Creacionales.Singleton
+﻿namespace DesignPatterns._1._0._Creacionales.Singleton
 {
     /// <summary>
     /// Clase: Definición teórica del objeto.
