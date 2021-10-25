@@ -6,6 +6,7 @@ using DesignPatterns._4._0._Otros.DependencyInjection;
 using DesignPatterns._4._0._Otros.Repository.Models;
 using DesignPatterns._4._0._Otros.Repository;
 using DesignPatterns._3._0._Comportamiento.Strategy;
+using DesignPatterns._1._0._Creacionales.Builder;
 
 namespace DesignPatterns
 {
@@ -50,11 +51,32 @@ namespace DesignPatterns
 
             #endregion Factory
 
+            #region Builder
+
+            Console.WriteLine(". INICIO PATRÓN BUILDER");
+
+            var builder = new PreparedAlcoholicDrinkConcreteBuilder();
+            var barmanDirector = new BarmanDirector(builder);
+            
+            barmanDirector.PreparedMargarita();
+            var preparedMargaritaDrink = builder.GetPreparedDrink();
+            Console.WriteLine(preparedMargaritaDrink.Result);
+            
+            barmanDirector.PreparedPiñaColada();
+            var preparedPiñaColadaDrink = builder.GetPreparedDrink();
+            Console.WriteLine(preparedPiñaColadaDrink.Result);
+
+            Console.WriteLine(". FIN PATRÓN BUILDER" + Environment.NewLine);
+
+            #endregion Builder
+
             Console.WriteLine("******************* FIN PATRONES CREACIONALES *******************");
 
             Console.WriteLine("******************* INICIO PATRONES ESTRUCTURALES *******************" + Environment.NewLine);
 
-            Console.WriteLine("******************* FIN PATRONES COMPORTAMIENTO *******************" + Environment.NewLine);
+            Console.WriteLine("******************* FIN PATRONES ESTRUCTURALES *******************" + Environment.NewLine);
+
+            Console.WriteLine("******************* INICIO PATRONES COMPORTAMIENTO *******************" + Environment.NewLine);
 
             #region Strategy            
 
@@ -69,10 +91,8 @@ namespace DesignPatterns
 
             #endregion Strategy
 
-            Console.WriteLine("******************* INICIO PATRONES COMPORTAMIENTO *******************" + Environment.NewLine);
-
-            Console.WriteLine("******************* FIN PATRONES ESTRUCTURALES *******************" + Environment.NewLine);
-
+            Console.WriteLine("******************* FIN PATRONES COMPORTAMIENTO *******************" + Environment.NewLine);
+            
             Console.WriteLine("******************* INICIO PATRONES OTROS *******************" + Environment.NewLine);
 
             #region DependencyInjection

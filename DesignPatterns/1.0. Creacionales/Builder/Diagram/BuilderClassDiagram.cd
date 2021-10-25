@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Director">
+    <Position X="1.008" Y="0.5" Height="0.333" Width="2" />
+  </Comment>
+  <Comment CommentText="ConcreteBuilder">
+    <Position X="6.408" Y="0.542" Height="0.333" Width="2" />
+  </Comment>
+  <Comment CommentText="Product">
+    <Position X="0.992" Y="3.559" Height="0.333" Width="2" />
+  </Comment>
+  <Class Name="DesignPatterns._1._0._Creacionales.Builder.BarmanDirector">
+    <Position X="1" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAACAAAAACAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>1.0. Creacionales\Builder\BarmanDirector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DesignPatterns._1._0._Creacionales.Builder.PreparedAlcoholicDrinkConcreteBuilder">
+    <Position X="5.5" Y="1" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAABAAAEBAAAAAAACAAQQAAAAAAAAAAADA=</HashCode>
+      <FileName>1.0. Creacionales\Builder\PreparedAlcoholicDrinkConcreteBuilder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DesignPatterns._1._0._Creacionales.Builder.PreparedDrink">
+    <Position X="1" Y="4" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAACQAAAAgAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>1.0. Creacionales\Builder\PreparedDrink.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="DesignPatterns._1._0._Creacionales.Builder.IBuilder">
+    <Position X="3.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAABAAAEAAAAAAAACAAQQAAAAAAAAAAACA=</HashCode>
+      <FileName>1.0. Creacionales\Builder\IBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
