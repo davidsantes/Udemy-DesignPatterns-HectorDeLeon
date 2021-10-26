@@ -3,6 +3,7 @@ using DesignPatternsInAsp.Models.Data;
 using DesignPatternsInAsp.Repository.Repository;
 using DesignPatternsInAsp.Repository.UnitOfWork;
 using DesignPatternsInAsp.Tools.Factory;
+using DesignPatternsInAsp.Tools.Generator;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -46,8 +47,9 @@ namespace DesignPatternsInAsp
 
             //A diferencia de Singleton, en este caso devuelve un objeto por cada solicitud
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+            //No se utiliza la intefaz porque internamente se puede crear con un elemento no asociado a la interfaz (Generator)
+            services.AddScoped<GeneratorConcreteBuilder>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
