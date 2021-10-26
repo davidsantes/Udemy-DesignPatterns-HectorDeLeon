@@ -9,6 +9,9 @@
   <Comment CommentText="Product">
     <Position X="0.992" Y="3.559" Height="0.333" Width="2" />
   </Comment>
+  <Comment CommentText="Patrón que viene bien cuando puede haber muchos constructores diferentes para generar un objeto">
+    <Position X="4.2" Y="4.718" Height="0.483" Width="3.367" />
+  </Comment>
   <Class Name="DesignPatterns._1._0._Creacionales.Builder.BarmanDirector">
     <Position X="1" Y="1" Width="2" />
     <TypeIdentifier>
