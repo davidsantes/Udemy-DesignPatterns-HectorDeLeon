@@ -13,23 +13,6 @@ namespace DesignPatterns
 {
     internal class Program
     {
-        private static void PatronSingletonEjecutar()
-        {
-            Console.WriteLine(". INICIO PATRÓN SINGLETON");
-
-            var singletonA = SingletonDefinition.Instance;
-            var singletonB = SingletonDefinition.Instance;
-            //Verifico si ambos objetos son la misma instancia
-            bool esMismaInstancia = singletonA == singletonB;
-            Console.WriteLine("Es la misma instancia: " + esMismaInstancia);
-
-            //Aplicación más práctica del Singleton
-            var log = Log.Instance;
-            log.Save("Esto es un mensaje para ver cómo funciona un log de tipo Singleton");
-
-            Console.WriteLine(". FIN PATRÓN SINGLETON" + Environment.NewLine);
-        }
-
         private static void Main(string[] args)
         {
             bool _ejecutarPatronSingleton = false;
@@ -96,6 +79,23 @@ namespace DesignPatterns
             }
 
             Console.WriteLine("******************* FIN PATRONES OTROS *******************");
+        }
+
+        private static void PatronSingletonEjecutar()
+        {
+            Console.WriteLine(". INICIO PATRÓN SINGLETON");
+
+            var singletonA = SingletonDefinition.Instance;
+            var singletonB = SingletonDefinition.Instance;
+            //Verifico si ambos objetos son la misma instancia
+            bool esMismaInstancia = singletonA == singletonB;
+            Console.WriteLine("Es la misma instancia: " + esMismaInstancia);
+
+            //Aplicación más práctica del Singleton
+            var log = Log.Instance;
+            log.Save("Esto es un mensaje para ver cómo funciona un log de tipo Singleton");
+
+            Console.WriteLine(". FIN PATRÓN SINGLETON" + Environment.NewLine);
         }
 
         private static void PatronFactoryEjecutar()
